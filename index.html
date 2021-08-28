@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <title>TESTING - live search</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row" style="margin-top:50px;">
+            <div class="col-sm-4">
+                <h1>Users Page</h1>
+                <p class='lead'> Get user information.</p>
+                <p>
+                    <button class="btn btn-outline-success"  type="button" data-toggle="collapse" data-target="#search-filter"
+                        aria-expanded="false" aria-controls="search-filter">
+                        Filter
+                    </button>
+                </p>
+                <div class="collapse" id="search-filter">
+                    <input type="text" name="master" id="master">
+                    <button onclick="cleanInput('#master')" type="button" class="btn bg-transparent" style="margin-left: -40px; z-index: 100;">
+                        <i class="fa fa-times">X</i>
+                    </button>
+                    <div class='action-buttons'>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="toggleAll(false)" id="filter_deselect">deselect all</button>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="toggleAll()" id="filter_select">select all</button></div>
+                    <div id='searchable'></div>
+
+
+                </div>
+
+                <button id="submit" class="btn btn-outline-success"> Get User Info</button>
+
+            </div>
+            <div class="col-sm-5" >
+                <h2>Results: </h2>
+                <div id="results">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src='live-search.js'></script>
+    <script>
+        $(document).ready(function () {
+            setLiveSearch('#master')
+        })
+
+    </script>
+
+
+</body>
+
+</html>
